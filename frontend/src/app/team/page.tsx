@@ -54,7 +54,7 @@ export default function TeamPage() {
       description: '팀장',
       image: '/kimseojin.png',
       color: 'from-[#729A8A] to-[#5a7a6d]',
-      portfolio: 'https://portfolio-example.com',
+      portfolio: 'https://webserver-final-portfolio.vercel.app/',
       github: 'https://github.com/Daru0613',
     },
     {
@@ -64,7 +64,7 @@ export default function TeamPage() {
       description: '팀원',
       image: '/parkhanbin.png',
       color: 'from-[#4c5be5] to-[#3a47b8]',
-      portfolio: 'https://portfolio-example.com',
+      portfolio: 'https://2025-2-mypage.vercel.app/ ',
       github: 'https://github.com/han122400',
     },
     {
@@ -74,7 +74,7 @@ export default function TeamPage() {
       description: '팀원',
       image: '/leejihun.png',
       color: 'from-[#DBDFEA] to-[#b8bdd1]',
-      portfolio: 'https://portfolio-example.com',
+      portfolio: 'https://web-final-five-sigma.vercel.app/',
       github: 'https://github.com/LEEJIHUN6844',
     },
     {
@@ -84,7 +84,7 @@ export default function TeamPage() {
       description: '팀원',
       image: '/yunjuhyeok.png',
       color: 'from-[#b773ec] to-[#9456c9]',
-      portfolio: 'https://portfolio-example.com',
+      portfolio: 'https://web-server-final-theta.vercel.app/',
       github: 'https://github.com/Juhyeok0603',
     },
   ]
@@ -202,7 +202,8 @@ export default function TeamPage() {
         {/* 3D 캐러셀 컨테이너: 마우스/터치 이벤트 핸들링 */}
         <div
           ref={containerRef} // DOM 참조
-          className="flex-1 flex items-center justify-center perspective-[2000px] cursor-grab active:cursor-grabbing"
+          className="flex items-center justify-center perspective-[2000px] cursor-grab active:cursor-grabbing py-8"
+          style={{ minHeight: '500px', maxHeight: 'calc(100vh - 320px)' }} // 최소/최대 높이 설정으로 버튼과 간격 유지
           // 마우스 이벤트
           onMouseDown={handleMouseDown} // 드래그 시작
           onMouseMove={handleMouseMove} // 드래그 중
@@ -414,11 +415,11 @@ export default function TeamPage() {
         </div>
 
         {/* 하단 힌트: 사용 방법 안내 */}
-        <div className="pb-8 text-center space-y-4">
-          <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+        <div className="py-6 px-4 md:py-8 text-center space-y-3 md:space-y-4 flex-shrink-0">
+          <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/20">
             {/* 왼쪽 화살표 아이콘 */}
             <svg
-              className="w-6 h-6 text-white"
+              className="w-5 h-5 md:w-6 md:h-6 text-white flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -430,10 +431,12 @@ export default function TeamPage() {
                 d="M7 16l-4-4m0 0l4-4m-4 4h18" // 좌측 화살표 경로
               />
             </svg>
-            <span className="text-white font-medium">드래그 또는 스크롤</span>
+            <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
+              드래그 또는 스크롤
+            </span>
             {/* 오른쪽 화살표 아이콘 */}
             <svg
-              className="w-6 h-6 text-white"
+              className="w-5 h-5 md:w-6 md:h-6 text-white flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -451,10 +454,10 @@ export default function TeamPage() {
           <div>
             <a
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm md:text-base rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -466,7 +469,7 @@ export default function TeamPage() {
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                 />
               </svg>
-              홈으로 이동
+              <span className="whitespace-nowrap">홈으로 이동</span>
             </a>
           </div>
         </div>
